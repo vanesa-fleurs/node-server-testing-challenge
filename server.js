@@ -5,6 +5,8 @@ require('dotenv').config()
 // console.log('secret!', process.env.JWT_SECRET);
 const authRouter = require('./auth/auth-router.js')
 const server = express();
+//env secret: 
+require('dotenv').config()
 
 server.use(express.json())
 server.use(helmet())

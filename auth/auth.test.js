@@ -1,12 +1,13 @@
 const db = require('../data/knexConfig.js')
+const Users = require('./auth-model.js')
 
-module.exports = {
-    getAll,
-    add,
-    findById,
-    findBy
-}
+describe('get all users',  () => {
+    
+    beforeEach(async () => {
+        await db('hobbits').truncate();
+    })
 
-async function getAll(){
-    return db('users')
-}
+    it('should return status code', () => {
+
+    })
+})
