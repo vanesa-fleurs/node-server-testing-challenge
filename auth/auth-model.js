@@ -7,15 +7,24 @@ module.exports = {
     findBy
 }
 
-async function getAll(){
+function getAll(){
+    console.log("here...")
     return db('users')
+    // .select('id', 'username', 'department')
 }
-async function add(){
-    return null;
+async function add(user) {
+    const [id] = await db('users').insert(user);
+  
+    return findById(id);
 }
-async function findById(){
-    return null;
+
+function findById(id) {
+    return db('users')
+      .select('id', 'username', 'department')
+      .where({ id })
+      .first();
 }
-async function findBy(){
-    return null;
+
+function findBy(filter){
+    return db('users').where(filter).first();
 }

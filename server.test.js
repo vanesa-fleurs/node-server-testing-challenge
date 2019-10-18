@@ -1,7 +1,7 @@
-// const db = require('../data/knexConfig.js')
-// const Users = require('./auth-model.js')
-// const request = require('supertest')
-// const auth = require('./auth-router')
+const db = require('./data/knexConfig.js')
+const Users = require('./auth/auth-model')
+const request = require('supertest')
+const server = require('./server.js')
 
 // describe('get all users',  () => {
 
@@ -17,3 +17,11 @@
 //             })
 //     })
 // })
+
+describe("GET /users", () => {
+    it("responds with 200 OK", () => {
+      return request(server)
+        .get("/users")
+        .expect(200);
+    });
+  });
