@@ -1,5 +1,6 @@
 const db = require('../data/dbconfig.js')
 
+
 module.exports = {
     get,
     findById,
@@ -17,10 +18,12 @@ function findById(id){
 async function insert(owner){
     try{
         const [id] = await db('owners').insert(owner)
-        return findById(id)
+        return db('owners').where({ id }).first()
     }
     catch(error){
         console.error(error)
     }
 }
+
+
 

@@ -17,19 +17,19 @@ exports.up = function(knex) {
   .createTable('pets', tbl => {
       tbl.increments()
       tbl
-        .string('name')
+        .string('name').notNullable()
       tbl
-        .string('age')
+        .string('age').notNullable()
       tbl
-        .string('breed')
+        .string('breed').notNullable()
       tbl
-        .boolean('gender')
+        .boolean('gender').notNullable()
       tbl
         .string('about me')
       tbl
-        .string('size')
+        .string('size').notNullable()
       tbl
-        .boolean('trained').defaultTo(false)
+        .boolean('trained').defaultTo(false).notNullable()
   })
   .createTable('pet_owners', tbl => {
       tbl.increments()
