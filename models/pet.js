@@ -16,7 +16,7 @@ function findById(id){
 
 async function insert(pet){
     try{
-        const [id] = await db('owners').insert(pet)
+        const [id] = await db('pets').insert(pet)
         return findById(id)
     }
     catch(error){

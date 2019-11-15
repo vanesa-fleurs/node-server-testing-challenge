@@ -23,13 +23,13 @@ exports.up = function(knex) {
       tbl
         .string('breed').notNullable()
       tbl
-        .boolean('gender').notNullable()
+        .string('gender').notNullable()
       tbl
-        .string('about me')
+        .string('aboutMe')
       tbl
         .string('size').notNullable()
       tbl
-        .boolean('trained').defaultTo(false).notNullable()
+        .boolean('trained').defaultTo(false)
   })
   .createTable('pet_owners', tbl => {
       tbl.increments()
